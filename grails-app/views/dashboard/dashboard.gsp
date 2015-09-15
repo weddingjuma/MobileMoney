@@ -39,14 +39,14 @@
 				   	</tr>
 		            <tr>
 				        <td>Check Outgoing Message Credits</td>
-				        <td colspan="2">N/A</td>
+				        <td colspan="2"></td>
 				        <td>
 				        	<g:actionSubmit action="checkOutgoingMessageCredits" value="Submit" />
 				        </td>
 				   	</tr>
 				   	<tr>
 				        <td>Check Pending Message Count</td>
-				        <td colspan="2">N/A</td>
+				        <td colspan="2"></td>
 				        <td>
 				        	<g:actionSubmit action="checkPendingMessageCount" value="Submit" />
 				        </td>
