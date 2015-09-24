@@ -24,7 +24,7 @@
 		                <th>Submit</th>
 		            </tr>
 		            <tr>
-				        <td>Send Message</td>
+				        <td>Basic Send Operation</td>
 				        <td>
 				        	<label>Phone Number:</label>
 							<label>Message:</label>
@@ -34,7 +34,7 @@
 							<g:textField name="sendMessageText" value=""/>
 						</td>
 				        <td>
-				        	<g:actionSubmit action="sendMessage" value="Submit" />
+				        	<g:actionSubmit action="basicSendOperationWithReference" value="Submit" />
 				        </td>
 				   	</tr>
 		            <tr>
@@ -51,12 +51,21 @@
 				        	<g:actionSubmit action="checkPendingMessageCount" value="Submit" />
 				        </td>
 				   	</tr>
-				   	
+				   	<tr>
+				        <td>Get Recent Incoming Messages</td>
+				        <td>
+				        	<label>Number of Messages:</label>
+						</td>
+						<td>
+							<g:textField name="numberOfMessages" value=""/>
+						</td>
+				        <td>
+				        	<g:actionSubmit action="getRecentIncomingMessages" value="Submit" />
+				        </td>
+				   	</tr>
 				   	
 				</table>
-				
-			</g:form>
-							   	
+			</g:form> 	
   		</div>
 	</body>
 </html>

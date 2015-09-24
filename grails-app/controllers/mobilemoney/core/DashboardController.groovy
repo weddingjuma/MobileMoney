@@ -12,6 +12,25 @@ class DashboardController {
 	def dashboard = {
 	}
 	
+	
+	//-----------------------------------------------------
+	// Title: BasicSendOperationWithReference
+	//-----------------------------------------------------
+	def basicSendOperationWithReference = {
+		
+		if (params.accountKey && params.phoneNumber && params.sendMessageText) {
+			
+			def smsResponse = GatewayService.basicSendOperationWithReference(params.accountKey, params.phoneNumber, params.sendMessageText)
+			flash.message = "Send Message Result = " + smsResponse
+		} else {
+		
+			flash.error = "Invalid inputs"
+		}
+		
+		render(view: "dashboard")
+	}
+	
+	
 	//-----------------------------------------------------
 	// Title: CheckOutgoingMessageCredits
 	//-----------------------------------------------------
@@ -28,6 +47,7 @@ class DashboardController {
 		
 		render(view: "dashboard")
 	}
+	
 	
 	//-----------------------------------------------------
 	// Title: CheckPendingMessageCount
@@ -46,15 +66,16 @@ class DashboardController {
 		render(view: "dashboard")
 	}
 	
+	
 	//-----------------------------------------------------
-	// Title: SendMessage
+	// Title: GetRecentIncomingMessages
 	//-----------------------------------------------------
-	def sendMessage = {
+	def getRecentIncomingMessages = {
 		
-		if (params.accountKey && params.phoneNumber && params.sendMessageText) {
+		if (params.accountKey && params.numberOfMessages) {
 			
-			def smsResponse = GatewayService.sendMessage(params.accountKey, params.phoneNumber, params.sendMessageText)
-			flash.message = "Send Message Result = " + smsResponse
+			def smsResponse = GatewayService.getRecentIncomingMessages(params.accountKey, params.numberOfMessages)
+			flash.message = "Array of incoming messages: " + smsResponse
 		} else {
 		
 			flash.error = "Invalid inputs"
